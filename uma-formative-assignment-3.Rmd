@@ -1,0 +1,26 @@
+---
+title: "Uma-formative-assignment-3"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+#install packages 
+```{r}
+install.packages("tidyverse")
+install.packages("emmeans")
+install.packages("performance")
+install.packages("see")
+install.packages("patchwork")
+library(dplyr) 
+data = read.csv("formative_assignment_3_data.csv")
+
+```
+
+#subject-level means 
+```{r}
+subject_accuracy = data %>%  
+  group_by(subject)   %>%  
+  summarize(mean_accuracy = mean(accuracy))
+
+```
+
